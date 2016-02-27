@@ -1,8 +1,7 @@
 * All functions in JavaScript have properties, just as objects have properties. And when a function executes, it gets the this property—a variable with the value of the object that invokes the function where this is used.
 
-*The this reference **ALWAYS refers to (and holds the value of) an object**—a singular object—and it is usually used inside a function or a method, although it can be used outside a function in the global scope.
+* The this reference **ALWAYS refers to (and holds the value of) an object**—a singular object—and it is usually used inside a function or a method, although it can be used outside a function in the global scope.
 
-**this is not assigned a value until an object invokes the function where this is defined.**
 
 ```javascript
 var firstName = "Peter",
