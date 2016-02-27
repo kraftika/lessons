@@ -45,20 +45,22 @@ The this keyword is most misunderstood:
 var person = {
    firstName   :"Penelope",
    lastName    :"Barrymore",
+
    showFullName:function () {
-​// The "context"​
-console.log (this.firstName + " " + this.lastName);
- }
+​     // The "context"​
+      console.log (this.firstName + " " + this.lastName);
+    }
 }
 ​
 ​// The "context", when invoking showFullName, is the person object, when we invoke the showFullName () method on the person object.​
 ​// And the use of "this" inside the showFullName() method has the value of the person object,​
+
 person.showFullName (); // Penelope Barrymore​
 ​
 ​// If we invoke showFullName with a different object:​
 ​var anotherPerson = {
-firstName   :"Rohit",
-lastName    :"Khan"​
+  firstName   :"Rohit",
+  lastName    :"Khan"​
 };
 ​
 ​// We can use the apply method to set the "this" value explicitly—more on the apply () method later.​
