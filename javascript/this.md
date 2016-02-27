@@ -31,3 +31,42 @@ window.showFullName (); // Peter Ally​
 // "this" inside the showFullName () method that is defined inside the person object still refers to the person object, hence:​
 person.showFullName (); // Penelope Barrymore
 ```
+####When this is most misunderstood and becomes tricky
+
+The this keyword is most misunderstood:
+* when we borrow a method that uses this
+* when we assign a method that uses this to a variable
+* when a function that uses this is passed as a callback function
+* when this is used inside a closure—an inner function.
+
+#####Context
+
+```javascript
+var person = {
+   firstName   :"Penelope",
+   lastName    :"Barrymore",
+   showFullName:function () {
+​// The "context"​
+console.log (this.firstName + " " + this.lastName);
+ }
+}
+​
+​// The "context", when invoking showFullName, is the person object, when we invoke the showFullName () method on the person object.​
+​// And the use of "this" inside the showFullName() method has the value of the person object,​
+person.showFullName (); // Penelope Barrymore​
+​
+​// If we invoke showFullName with a different object:​
+​var anotherPerson = {
+firstName   :"Rohit",
+lastName    :"Khan"​
+};
+​
+​// We can use the apply method to set the "this" value explicitly—more on the apply () method later.​
+​// "this" gets the value of whichever object invokes the "this" Function, hence:​
+person.showFullName.apply (anotherPerson); // Rohit Khan​
+​
+​// So the context is now anotherPerson because anotherPerson invoked the person.showFullName ()  method by virtue of using the apply () method​
+```
+
+1. Fix this when used in a method passed as a callback
+
